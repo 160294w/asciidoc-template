@@ -1,0 +1,24 @@
+== 付録
+
+=== 変更履歴
+
+[cols="1,2,3", options="header"]
+|===
+|バージョン |日付 |変更内容
+
+|1.0.0
+|{revdate}
+|初版リリース
+
+|===
+
+=== ライセンス
+
+このドキュメントは以下のライセンスの下で公開されています。
+
+Copyright © {revdate} {company}. All rights reserved.
+
+---
+
+[.text-center]
+_このドキュメントは AsciiDoc で作成されました。_

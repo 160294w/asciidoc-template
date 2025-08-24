@@ -1,0 +1,10 @@
+// ヘッダー部分の共通インクルード
+[.text-center]
+--
+*{company}*
+
+*{project-name} ドキュメント*
+
+バージョン: {product-version} +
+最終更新: {revdate}
+--

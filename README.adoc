@@ -1,0 +1,212 @@
+= AsciiDoc テンプレート
+:toc:
+:toclevels: 3
+:sectnums:
+
+技術文書作成のための AsciiDoc テンプレートリポジトリです。
+
+== ディレクトリ構造
+
+----
+docs/
+├── main.adoc         # メインドキュメント（章を include してまとめる）
+├── attributes.adoc   # 共通属性や定義
+├── chapters/         # 各章・節ごとのファイル
+│   ├── chapter1.adoc
+│   ├── chapter2.adoc
+│   └── chapter3.adoc
+├── images/           # 図・スクリーンショットなど
+│   ├── diagram1.png
+│   └── screenshot1.png
+├── snippets/         # コードスニペット用ファイル
+│   ├── example1.txt
+│   └── example2.txt
+└── includes/         # 部分的に include する汎用ブロック
+    ├── header.adoc
+    └── footer.adoc
+----
+
+== 使い方
+
+=== 1. テンプレートのカスタマイズ
+
+まず、共通設定を編集します：
+
+[source,bash]
+----
+# 共通属性を編集（会社名、プロジェクト名など）
+vi docs/attributes.adoc
+
+# メインドキュメントのタイトルを編集
+vi docs/main.adoc
+----
+
+=== 2. コンテンツの作成
+
+各章のファイルを編集してコンテンツを追加します：
+
+[source,bash]
+----
+# 第1章を編集
+vi docs/chapters/chapter1.adoc
+
+# 第2章を編集
+vi docs/chapters/chapter2.adoc
+
+# 第3章を編集
+vi docs/chapters/chapter3.adoc
+----
+
+=== 3. 画像・スニペットの追加
+
+[source,bash]
+----
+# 画像ファイルを追加
+cp your-diagram.png docs/images/
+
+# コードスニペットを追加
+echo "your code here" > docs/snippets/example3.txt
+----
+
+=== 4. HTML生成
+
+AsciiDoctor を使用してHTMLを生成：
+
+[source,bash]
+----
+# AsciiDoctor のインストール（初回のみ）
+gem install asciidoctor
+
+# HTMLファイル生成
+asciidoctor docs/main.adoc
+----
+
+=== 5. PDF生成
+
+PDF生成には asciidoctor-pdf が必要：
+
+[source,bash]
+----
+# asciidoctor-pdf のインストール（初回のみ）
+gem install asciidoctor-pdf
+
+# PDFファイル生成
+asciidoctor-pdf docs/main.adoc
+----
+
+== カスタマイズ方法
+
+=== 新しい章の追加
+
+. 新しいファイルを作成：
++
+[source,bash]
+----
+cp docs/chapters/chapter1.adoc docs/chapters/chapter4.adoc
+----
+
+. `main.adoc` にインクルードを追加：
++
+[source,adoc]
+----
+include::chapters/chapter4.adoc[]
+----
+
+=== 共通ブロックの追加
+
+再利用可能なコンテンツは `includes/` ディレクトリに：
+
+[source,bash]
+----
+# 新しい共通ブロックを作成
+vi docs/includes/warning-block.adoc
+----
+
+使用時：
+[source,adoc]
+----
+include::includes/warning-block.adoc[]
+----
+
+=== スタイルのカスタマイズ
+
+CSS スタイルをカスタマイズする場合：
+
+. カスタムCSSを作成：
++
+[source,bash]
+----
+mkdir docs/styles
+vi docs/styles/custom.css
+----
+
+. `attributes.adoc` で CSS を指定：
++
+[source,adoc]
+----
+:stylesheet: styles/custom.css
+----
+
+== よく使う AsciiDoc 記法
+
+=== 見出し
+[source,adoc]
+----
+= ドキュメントタイトル（レベル0）
+== 章（レベル1）
+=== 節（レベル2）
+==== 小節（レベル3）
+----
+
+=== 警告ブロック
+[source,adoc]
+----
+[NOTE]
+====
+注意：ここに注意事項を記載
+====
+
+[WARNING]
+====
+警告：危険な操作について
+====
+----
+
+=== コードブロック
+[source,adoc]
+----
+[source,javascript]
+----
+console.log("Hello, World!");
+----
+----
+
+=== 画像の挿入
+[source,adoc]
+----
+.キャプション
+image::filename.png[代替テキスト, 幅, 高さ]
+----
+
+=== 表
+[source,adoc]
+----
+[cols="1,2,3", options="header"]
+|===
+|列1 |列2 |列3
+
+|データ1
+|データ2
+|データ3
+|===
+----
+
+== 参考資料
+
+* https://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc Writer's Guide]
+* https://asciidoctor.org/docs/[AsciiDoctor Documentation]
+* https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
+
+== ライセンス
+
+MIT License

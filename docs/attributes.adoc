@@ -1,0 +1,25 @@
+// 共通属性定義ファイル
+:author: 著者名
+:email: author@example.com
+:version: 1.0
+:revdate: {docdate}
+:company: 会社名
+:project-name: プロジェクト名
+:product-version: 1.0.0
+
+// カスタム属性
+:warning-caption: 警告
+:note-caption: 注意
+:tip-caption: ヒント
+:important-caption: 重要
+:caution-caption: 注意
+
+// スタイル関連
+:stylesheet: asciidoctor.css
+:stylesdir: styles
+:linkcss:
+
+// 図表関連
+:figure-caption: 図
+:table-caption: 表
+:listing-caption: リスト

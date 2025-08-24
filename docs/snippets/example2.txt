@@ -1,0 +1,18 @@
+# YAML設定の例
+server:
+  host: localhost
+  port: 8080
+  timeout: 30
+
+database:
+  driver: mysql
+  host: db.example.com
+  port: 3306
+  name: myapp
+  username: user
+  password: password
+
+logging:
+  level: info
+  file: /var/log/myapp.log
+  max_size: 100MB

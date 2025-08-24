@@ -1,0 +1,22 @@
+= メインドキュメントタイトル
+:doctype: book
+:toc: left
+:toclevels: 3
+:sectnums:
+:sectlinks:
+:imagesdir: images
+:source-highlighter: highlight.js
+
+include::attributes.adoc[]
+
+== 前書き
+
+このドキュメントについて説明します。
+
+include::chapters/chapter1.adoc[]
+
+include::chapters/chapter2.adoc[]
+
+include::chapters/chapter3.adoc[]
+
+include::includes/footer.adoc[]

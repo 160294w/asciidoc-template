@@ -1,0 +1,12 @@
+// JavaScriptの例
+function greetUser(name) {
+    if (!name) {
+        throw new Error('名前が指定されていません');
+    }
+    
+    return `こんにちは、${name}さん！`;
+}
+
+// 使用例
+const message = greetUser('太郎');
+console.log(message);
