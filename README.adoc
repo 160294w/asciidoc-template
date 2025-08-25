@@ -7,7 +7,7 @@
 
 [NOTE]
 ====
-GitHub は include 機能が機能しません。
+GitHub は include 機能が機能しません。詳細については https://github.com/github/markup/issues/1095[GitHub Issue #1095] を参照してください。
 ====
 
 == ディレクトリ構造
